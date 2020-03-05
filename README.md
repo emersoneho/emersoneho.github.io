@@ -1,6 +1,6 @@
 # CV - Émerson Henrique de Oliveira 
+-----------
 
-=========================
 ![screenshot](assets/img/screenshot.jpg)
 
 A simple, static CV that show my skills and my academic journey.
