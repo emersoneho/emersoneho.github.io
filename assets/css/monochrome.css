@@ -12135,7 +12135,7 @@ input[type=number]::-webkit-outer-spin-button {
 @media screen and (max-width:760px) {
     .section {
         padding-top: 50px;
-        padding-bottom: 50px
+        padding-bottom: 20px
     }
 }
 
@@ -12353,7 +12353,7 @@ input[type=number]::-webkit-outer-spin-button {
 .resume-list .resume-list__block {
     border-left: 2px solid #4a4a4a;
     padding-left: 25px;
-    padding-bottom: 50px
+    padding-bottom: 30px
 }
 
 .resume-list .resume-list__block p {
@@ -12378,7 +12378,7 @@ input[type=number]::-webkit-outer-spin-button {
 .resume-list .resume-list__block-title {
     text-transform: uppercase;
     color: #4a4a4a;
-    font-size: 14px;
+    font-size: 12pt;
     line-height: 20px;
     font-family: Roboto Mono, monospace;
     font-weight: 700;
@@ -12746,7 +12746,7 @@ input[type=number]::-webkit-outer-spin-button {
 @media screen and (max-width:990px) {
     .portfolio-modal .modal-body {
         padding: 15px;
-        padding-bottom: 50px
+        padding-bottom: 20px
     }
 }
 
