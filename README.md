@@ -8,8 +8,28 @@ A simple, static CV that show my skills and my academic journey.
 
 Development
 -----------
-### Run the site locally
+### Firebase Realtime Database
+
+#### Endpoints
 ```bash
-git clone https://github.com/emersoneho/emersoneho.github.io.git
+https://cv-emerson.firebaseio.com/files.json
+
+https://cv-emerson.firebaseio.com/informations.json
+
+https://cv-emerson.firebaseio.com/resume.json
 ```
+
+#### Endpoints
+
+As part of request, was used Realtime Database to get skills and informations about me,
+another part, was requested one time.
+
+
+Development
+-----------
+#### Verify Prerequisit
+
+
+
+
 

@@ -1,3 +1,12 @@
+'use strict';
+
+/*
+    Name: FirebaseService
+    Author: Émerson Henrique de Oliveira
+    GitHub: https://github.com/emersoneho
+    Version: 0.0.1
+*/
+
 const firebaseService = {
     create: (endpoint, data) => {
         let newKey = database.ref().child(endpoint).push().key;
