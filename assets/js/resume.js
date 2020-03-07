@@ -112,6 +112,12 @@ const setSkills = () => {
 const setFiles = (data) => {
     let link__cv = document.querySelectorAll('.link__cv');
     link__cv.forEach(element => element.href = data.cv);
+
+    let link__avatar_image = document.querySelectorAll('.link__avatar_image');
+    link__avatar_image.forEach(element => element.src = data.avatar_image);
+
+    let link__cover_image = document.querySelectorAll('.link__cover_image');
+    link__cover_image.forEach(element => element.style.backgroundImage = `url("${data.cover_image}")`);
 }
 
 
