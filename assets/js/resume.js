@@ -65,6 +65,7 @@ const setPersonalInfo = (data) => {
     let info__name = document.querySelectorAll('.info__name');
     let info__age = document.querySelectorAll('.info__age');
     let info__role = document.querySelectorAll('.info__role');
+    let info__address = document.querySelectorAll('.info__address');
 
     let link__facebook = document.querySelectorAll('.link__facebook');
     let link__github = document.querySelectorAll('.link__github');
@@ -76,6 +77,7 @@ const setPersonalInfo = (data) => {
     info__name.forEach(element => element.textContent = data.name);
     info__role.forEach(element => element.textContent = data.role);
     info__age.forEach(element => element.textContent = data.age);
+    info__address.forEach(element => element.textContent = data.address);
 
     link__facebook.forEach(element => element.href = data.social_networks.facebook);
     link__github.forEach(element => element.href = data.social_networks.github);
