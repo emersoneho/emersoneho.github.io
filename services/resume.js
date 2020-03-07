@@ -21,7 +21,7 @@ const setDescription = () => {
 
     database.ref('informations/description').on('value', (snapshot) => {
         aux.innerText = snapshot.val();
-    }, (error) => {
+    }, () => {
         aux.innerText = 'error on description request';
     });
 }
@@ -63,6 +63,7 @@ const setPersonalInfo = (data) => {
     let info__linkEmail = document.querySelectorAll('.info__linkEmail');
     let info__skypeid = document.querySelectorAll('.info__skypeid');
     let info__name = document.querySelectorAll('.info__name');
+    let info__age = document.querySelectorAll('.info__age');
     let info__role = document.querySelectorAll('.info__role');
 
     let link__facebook = document.querySelectorAll('.link__facebook');
@@ -72,8 +73,9 @@ const setPersonalInfo = (data) => {
     info__whatsapp.forEach(element => element.textContent = data.whatsapp);
     info__linkEmail.forEach(element => element.textContent = data.email);
     info__skypeid.forEach(element => element.textContent = data.skypeid);
-    info__name.forEach(element => element.textContent = data.address);
+    info__name.forEach(element => element.textContent = data.name);
     info__role.forEach(element => element.textContent = data.role);
+    info__age.forEach(element => element.textContent = data.age);
 
     link__facebook.forEach(element => element.href = data.social_networks.facebook);
     link__github.forEach(element => element.href = data.social_networks.github);
