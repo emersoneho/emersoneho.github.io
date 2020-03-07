@@ -58,11 +58,11 @@
     <!-- Mobile menu -->
 
     <!--Header-->
-    <header class="main-header link__cover_image" style="background-image: url(assets/img/img_bg_header.jpg)">
+    <header class="main-header" style="background-image: url(assets/img/img_bg_header.jpg)">
         <div class="container">
             <div class="row personal-profile">
                 <div class="col-md-4 personal-profile__avatar">
-                    <img class="link__avatar_image" alt="avatar">
+                    <img class="" src="assets/img/img_avatar.png" alt="avatar">
                 </div>
                 <div class="col-md-8">
                     <p class="personal-profile__name info__name"></p>
@@ -123,6 +123,28 @@
         </div>
         <div class="row">
             <div class="col-md-8 section__resume resume-list education">
+                <h3 class="resume-list_title">education</h3>
+                <div class="resume-list__block">
+                    <p class="resume-list__block-title">Faculdade Metropolitana </p>
+                    <p class="resume-list__block-date">2020 - 2020</p>
+                    <p>
+                        MBA - Software Engineer
+                    </p>
+                </div>
+                <div class="resume-list__block">
+                    <p class="resume-list__block-title">Braz Cubas</p>
+                    <p class="resume-list__block-date">2017 - 2019</p>
+                    <p>
+                        Analysis and Systems Development
+                    </p>
+                </div>
+                <div class="resume-list__block">
+                    <p class="resume-list__block-title">ETEC São José dos Campos </p>
+                    <p class="resume-list__block-date">2009 - 2011</p>
+                    <p>
+                        Computer Technician
+                    </p>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -173,29 +195,6 @@
             </div>
         </div>
     </div>
-
-    <div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <!--Contact-->
     <script src="assets/js/jquery-2.2.4.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
@@ -219,7 +218,7 @@
     <script src="assets/js/firebase-config.js"></script>
     <script src="services/firebase-service.js"></script>
 
-    <script src="assets/js/resume.js"></script>
+    <script src="services/resume.js"></script>
 </body>
 
 </html>

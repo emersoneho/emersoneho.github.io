@@ -11,10 +11,10 @@ const getResume = () => {
         setEducation(resume.education);
         setEmployments(resume.employments);
         setPersonalInfo(resume.personal_info);
+
         setFiles(files);
     });
 }
-
 
 const setDescription = () => {
     let aux = document.querySelector('#description');
@@ -111,13 +111,9 @@ const setSkills = () => {
 
 const setFiles = (data) => {
     let link__cv = document.querySelectorAll('.link__cv');
-    let link__avatar_image = document.querySelectorAll('.link__avatar_image');
-    let link__cover_image = document.querySelectorAll('.link__cover_image');
-
     link__cv.forEach(element => element.href = data.cv);
-    link__avatar_image.forEach(element => element.src = data.avatar_image);
-    link__cover_image.forEach(element => element.style.backgroundImage = `url("${data.cover_image}")`);
 }
+
 
 window.addEventListener("load", getResume());
 window.addEventListener("load", setDescription());
