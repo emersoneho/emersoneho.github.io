@@ -105,7 +105,6 @@ const setSkills = () => {
             `;
         });
         document.querySelector('.info__skills').innerHTML = title + item;
-
     }, () => {
         aux.innerText = 'error on description request';
     });
@@ -123,6 +122,8 @@ const setFiles = (data) => {
 }
 
 
-window.addEventListener("load", getResume());
-window.addEventListener("load", setDescription());
-window.addEventListener("load", setSkills());
+window.addEventListener("load", () => {
+    setDescription();
+    getResume();
+    setSkills();
+});
