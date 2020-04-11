@@ -11,10 +11,20 @@
     <link rel="stylesheet" href="assets/css/monochrome.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Inconsolata">
     <link rel="stylesheet" href="assets/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel='icon' type='image/png' sizes='32x32' href='assets/img/favicon.png'>
 </head>
 
 <body>
+    <div id="preloader">
+        <div class="inner">
+            <div class="bolas">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
     <!--Main menu-->
     <div class="menu">
         <div class="container">
@@ -176,6 +186,9 @@
     </div>
     <!--Contact-->
     <script src="assets/js/jquery-2.2.4.min.js"></script>
+
+    <script src="assets/js/scripts.js"></script>
+
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/menu.js"></script>
@@ -194,10 +207,10 @@
     <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
 
-    <script src="assets/js/firebase-config.js"></script>
+    <script src="config/firebase-config.js"></script>
     <script src="services/firebase-service.js"></script>
 
-    <script src="assets/js/resume.js"></script>
+    <script src="controllers/home.js"></script>
 </body>
 
 </html>
