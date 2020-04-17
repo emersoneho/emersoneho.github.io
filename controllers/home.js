@@ -13,6 +13,7 @@ const getResume = () => {
         setPersonalInfo(resume.personal_info);
 
         setFiles(files);
+        hideLoading();
     });
 }
 
@@ -82,6 +83,7 @@ const setPersonalInfo = (data) => {
     link__facebook.forEach(element => element.href = data.social_networks.facebook);
     link__github.forEach(element => element.href = data.social_networks.github);
     link__linkedin.forEach(element => element.href = data.social_networks.linkedin);
+
 }
 
 const setSkills = () => {
@@ -124,6 +126,6 @@ const setFiles = (data) => {
 
 window.addEventListener("load", () => {
     setDescription();
-    getResume();
     setSkills();
+    getResume();
 });
