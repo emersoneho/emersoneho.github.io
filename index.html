@@ -8,15 +8,31 @@
     <meta name="author" content="Émerson Henrique">
     <meta name="description" content="Émerson's portfolio showing my skills, educations and employments.">
     <meta name="keywords" content="sites, web, desenvolvimento,portfolio">
+    <meta name="theme-color" content="#000000">
     <title>Resume - Émerson Henrique</title>
     <link rel="stylesheet" href="assets/css/monochrome.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Inconsolata&display=swa"
         rel="preconnect">
     <link rel="stylesheet" rel="preload" href="assets/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    
     <link rel='icon' type='image/png' sizes='32x32' href='assets/img/favicon.png'>
-
-
+    <link rel="apple-touch-icon" href="assets/img/favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('sw.js').then(function (registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration
+                        .scope);
+                }, function (err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
 </head>
 
 <body>
