@@ -112,7 +112,8 @@ const setFiles = (data) => {
     link__cv.forEach(element => element.href = data.cv);
 }
 
-
-window.addEventListener("load", getResume());
-window.addEventListener("load", setDescription());
-window.addEventListener("load", setSkills());
+window.addEventListener("load", () => {
+    getResume();
+    setDescription();
+    setSkills();
+});
