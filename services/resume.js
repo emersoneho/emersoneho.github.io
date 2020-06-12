@@ -112,8 +112,14 @@ const setFiles = (data) => {
     link__cv.forEach(element => element.href = data.cv);
 }
 
+export {
+    getResume,
+    setDescription,
+    setSkills
+}
+/* 
 window.addEventListener("load", () => {
     getResume();
     setDescription();
     setSkills();
-});
+}); */
