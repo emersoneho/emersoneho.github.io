@@ -1,4 +1,5 @@
 import database from "../services/firebase-service.js";
+import loading from "../modules/loading.js";
 
 'use strict';
 
@@ -15,7 +16,7 @@ const getResume = () => {
         setPersonalInfo(resume.personal_info);
 
         setFiles(files);
-        hideLoading();
+        loading.hide();
     });
 }
 
