@@ -1,9 +1,11 @@
+import database from "../services/firebase-service.js";
+
 'use strict';
 
 const getResume = () => {
     Promise.all([
-        firebaseService.read('resume'),
-        firebaseService.read('files'),
+        database.read('resume'),
+        database.read('files'),
     ]).then((values) => {
         let resume = values[0];
         let files = values[1];
@@ -13,17 +15,19 @@ const getResume = () => {
         setPersonalInfo(resume.personal_info);
 
         setFiles(files);
+        hideLoading();
     });
 }
 
-const setDescription = () => {
+const setDescription = async () => {
     let aux = document.querySelector('#description');
+    let response = await database.read('informations/description');
 
-    database.ref('informations/description').on('value', (snapshot) => {
-        aux.innerText = snapshot.val();
-    }, (error) => {
+    if (response) {
+        aux.innerText = response;
+    } else {
         aux.innerText = 'error on description request';
-    });
+    }
 }
 
 const setEducation = (data) => {
@@ -63,7 +67,9 @@ const setPersonalInfo = (data) => {
     let info__linkEmail = document.querySelectorAll('.info__linkEmail');
     let info__skypeid = document.querySelectorAll('.info__skypeid');
     let info__name = document.querySelectorAll('.info__name');
+    let info__age = document.querySelectorAll('.info__age');
     let info__role = document.querySelectorAll('.info__role');
+    let info__address = document.querySelectorAll('.info__address');
 
     let link__facebook = document.querySelectorAll('.link__facebook');
     let link__github = document.querySelectorAll('.link__github');
@@ -72,21 +78,24 @@ const setPersonalInfo = (data) => {
     info__whatsapp.forEach(element => element.textContent = data.whatsapp);
     info__linkEmail.forEach(element => element.textContent = data.email);
     info__skypeid.forEach(element => element.textContent = data.skypeid);
-    info__name.forEach(element => element.textContent = data.address);
+    info__name.forEach(element => element.textContent = data.name);
     info__role.forEach(element => element.textContent = data.role);
+    info__age.forEach(element => element.textContent = data.age);
+    info__address.forEach(element => element.textContent = data.address);
 
     link__facebook.forEach(element => element.href = data.social_networks.facebook);
     link__github.forEach(element => element.href = data.social_networks.github);
     link__linkedin.forEach(element => element.href = data.social_networks.linkedin);
+
 }
 
-const setSkills = () => {
+const setSkills = async() => {
     var title = `<div class="col-md-12"><h3 class="progress-list__title">general skills</h3></div>`;
-    database.ref('resume/skills').on('value', (snapshot) => {
-        var data = snapshot.val();
+    let response = await database.read('resume/skills');
+    if (response) {
         var item = '';
-        data.sort((a, b) => a.order - b.order);
-        data.forEach((v, k) => {
+        response.sort((a, b) => a.order - b.order);
+        response.forEach((v, k) => {
             item += `
                 <div class="progress-list__skill col-md-4">
                     <p>
@@ -101,18 +110,24 @@ const setSkills = () => {
             `;
         });
         document.querySelector('.info__skills').innerHTML = title + item;
-
-    }, () => {
+    } else {
         aux.innerText = 'error on description request';
-    });
+    }
 }
 
 const setFiles = (data) => {
     let link__cv = document.querySelectorAll('.link__cv');
     link__cv.forEach(element => element.href = data.cv);
+
+    let link__avatar_image = document.querySelectorAll('.link__avatar_image');
+    link__avatar_image.forEach(element => element.src = data.avatar_image);
+
+    let link__cover_image = document.querySelectorAll('.link__cover_image');
+    link__cover_image.forEach(element => element.style.backgroundImage = `url("${data.cover_image}")`);
 }
 
-
-window.addEventListener("load", getResume());
-window.addEventListener("load", setDescription());
-window.addEventListener("load", setSkills());
+window.addEventListener("load", () => {
+    setDescription();
+    setSkills();
+    getResume();
+});
