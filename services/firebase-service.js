@@ -6,7 +6,7 @@
     Version: 0.0.2
 */
 
-import database from '../assets/js/firebase-config.js';
+import database from '../config/firebase-config.js';
 
 const firebaseFactory = {
     create: async (endpoint, ...data) => {
