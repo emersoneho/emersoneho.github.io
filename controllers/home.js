@@ -1,9 +1,11 @@
+import database from "../services/firebase-service.js";
+
 'use strict';
 
 const getResume = () => {
     Promise.all([
-        firebaseService.read('resume'),
-        firebaseService.read('files'),
+        database.read('resume'),
+        database.read('files'),
     ]).then((values) => {
         let resume = values[0];
         let files = values[1];
@@ -17,14 +19,15 @@ const getResume = () => {
     });
 }
 
-const setDescription = () => {
+const setDescription = async () => {
     let aux = document.querySelector('#description');
+    let response = await database.read('informations/description');
 
-    database.ref('informations/description').on('value', (snapshot) => {
-        aux.innerText = snapshot.val();
-    }, () => {
+    if (response) {
+        aux.innerText = response;
+    } else {
         aux.innerText = 'error on description request';
-    });
+    }
 }
 
 const setEducation = (data) => {
@@ -86,13 +89,13 @@ const setPersonalInfo = (data) => {
 
 }
 
-const setSkills = () => {
+const setSkills = async() => {
     var title = `<div class="col-md-12"><h3 class="progress-list__title">general skills</h3></div>`;
-    database.ref('resume/skills').on('value', (snapshot) => {
-        var data = snapshot.val();
+    let response = await database.read('resume/skills');
+    if (response) {
         var item = '';
-        data.sort((a, b) => a.order - b.order);
-        data.forEach((v, k) => {
+        response.sort((a, b) => a.order - b.order);
+        response.forEach((v, k) => {
             item += `
                 <div class="progress-list__skill col-md-4">
                     <p>
@@ -107,9 +110,9 @@ const setSkills = () => {
             `;
         });
         document.querySelector('.info__skills').innerHTML = title + item;
-    }, () => {
+    } else {
         aux.innerText = 'error on description request';
-    });
+    }
 }
 
 const setFiles = (data) => {
@@ -122,7 +125,6 @@ const setFiles = (data) => {
     let link__cover_image = document.querySelectorAll('.link__cover_image');
     link__cover_image.forEach(element => element.style.backgroundImage = `url("${data.cover_image}")`);
 }
-
 
 window.addEventListener("load", () => {
     setDescription();

@@ -13,10 +13,10 @@
 
     <meta name="keywords" content="sites, web, desenvolvimento,portfolio">
     <meta name="theme-color" content="#000000">
-   
+
     <meta name="twitter:title" content="Émerson Henrique Resume">
     <meta property="og:title" content="Émerson Henrique Resume">
-   
+
     <meta property="og:image"
         content="https://scontent.fopo2-2.fna.fbcdn.net/v/t1.0-9/p720x720/59605209_2673466579391208_5096016161703723008_o.jpg?_nc_cat=106&_nc_sid=09cbfe&_nc_ohc=6VxR5b7SrdYAX9X4LaD&_nc_ht=scontent.fopo2-2.fna&_nc_tp=6&oh=fb887fa61299d4e118e3531550a7a32f&oe=5EBED858">
     <meta property="og:url" content="http://emersoneho.github.io/">
@@ -83,9 +83,6 @@
             </div>
         </div>
     </div>
-    <!--Main menu-->
-
-    <!-- Mobile menu -->
     <div class="mobile-menu d-lg-none">
         <div class="container">
             <div class="mobile-menu__close">
@@ -101,9 +98,6 @@
             </nav>
         </div>
     </div>
-    <!-- Mobile menu -->
-
-    <!--Header-->
     <header class="main-header link__cover_image">
         <div class="container">
             <div class="row personal-profile">
@@ -118,10 +112,9 @@
                             <dt>Age:</dt>
                             <dd class="info__age"></dd>
                             <dt>Phone:</dt>
-                            <dd><a href="https://api.whatsapp.com/send?phone=351936142456&text=hi,%20i%20have%20see%20your%20github%20and%20want%20to%20contact%20you.%20Send%20me%20a%20message"
-                                    target='_target' class="info__whatsapp"></a></dd>
+                            <dd><a target='_target' class="info__whatsapp"></a></dd>
                             <dt>Email:</dt>
-                            <dd><a href="mailto:emerson.eho@gmail.com" class="info__linkEmail"></a></dd>
+                            <dd><a class="info__linkEmail"></a></dd>
                             <dt>Address:</dt>
                             <dd class="info__address"></dd>
                         </dl>
@@ -144,9 +137,6 @@
             </div>
         </div>
     </header>
-    <!--Header-->
-
-    <!--Hello-->
     <section id="hello" class="container section">
         <div class="row">
             <div class="col-md-10">
@@ -159,11 +149,9 @@
             </div>
         </div>
     </section>
-    <!--Hello-->
 
     <hr>
 
-    <!--Resume-->
     <section id="resume" class="container section">
         <div class="row">
             <div class="col-md-10">
@@ -171,20 +159,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-8 section__resume resume-list education">
-
-            </div>
+            <div class="col-md-8 section__resume resume-list education"> </div>
         </div>
         <div class="row">
-            <div class="col-md-8 section__resume resume-list employment">
-            </div>
+            <div class="col-md-8 section__resume resume-list employment"> </div>
         </div>
-        <div class="row section__resume progress-list js-progress-list info__skills">
-        </div>
+        <div class="row section__resume progress-list js-progress-list info__skills"> </div>
     </section>
-    <!--Resume-->
 
-    <!--Contact-->
     <div class="background" style="background-image: url(assets/img/img_bg_main.jpg)">
         <div id="contact" class="container section">
             <div class="row">
@@ -198,16 +180,15 @@
                         <dl class="contact-list">
                             <dt>Phone:</dt>
                             <dd>
-                                <a href="https://api.whatsapp.com/send?phone=351936142456&text=hi,%20i%20have%20see%20your%20github%20and%20want%20to%20contact%20you.%20Send%20me%20a%20message"
-                                    target='_target' class='info__whatsapp'></a>
+                                <a target='_target' class='info__whatsapp'></a>
                             </dd>
                             <dt>Skype:</dt>
                             <dd>
-                                <a href="skype:emerson.eho" class="info__skypeid"></a>
+                                <a class="info__skypeid"></a>
                             </dd>
                             <dt>Email:</dt>
                             <dd>
-                                <a href="mailto:emerson.eho@gmail.com" class="info__linkEmail"></a>
+                                <a class="info__linkEmail"></a>
                             </dd>
                         </dl>
                     </div>
@@ -223,8 +204,6 @@
             </div>
         </div>
     </div>
-    <!--Contact-->
-
 </body>
 
 <script src="assets/js/jquery-3.5.0.min.js"></script>
@@ -236,25 +215,15 @@
 <script src="assets/js/bootstrap.min.js"></script>
 
 <script src="assets/js/menu.js"></script>
-<script src="assets/js/jquery.waypoints.js"></script>
-<script src="assets/js/progress-list.js"></script>
-<script src="assets/js/section.js"></script>
-<script src="assets/js/portfolio-filter.js"></script>
-<script src="assets/js/slider-carousel.js"></script>
-<script src="assets/js/mobile-menu.js"></script>
-<script src="assets/js/mbclicker.min.js"></script>
-<script src="assets/js/site-btn.js"></script>
-<script src="assets/js/style-switcher.js"></script>
 
 
 <script rel="preconnect" src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
 <script rel="preconnect" src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
 <script rel="preconnect" src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
 
-<script src="config/firebase-config.js"></script>
-<script src="services/firebase-service.js"></script>
+<script type='module' src="services/firebase-service.js"></script>
 
-<script src="controllers/home.js"></script>
+<script type='module' src="controllers/home.js"></script>
 <script src="controllers/loading.js"></script>
 
 </html>
