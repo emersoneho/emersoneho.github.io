@@ -6,16 +6,7 @@ import loading from "../modules/loading.js";
 const getResume = async () => {
     let resume = await database.read('resume');
     let files = await database.read('files');
-    /* 
-        Promise.all([
-            database.read('resume'),
-            database.read('files'),
-            database.read('badges'),
-        ]).then((values) => { 
-        let resume = values[0];
-        let files = values[1];
-        let badges = values[2];
-    */
+  
     setEducation(resume.education);
     setEmployments(resume.employments);
     setPersonalInfo(resume.personal_info);
@@ -23,7 +14,6 @@ const getResume = async () => {
     setFiles(files);
 
     loading.hide();
-    //});
 }
 
 const getBadges = async () => {
