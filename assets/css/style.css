@@ -67,3 +67,9 @@ body {
         opacity: 1;
     }
 }
+
+#badges .info__badges{
+    font-size: 10pt;
+    line-height: initial;
+    text-align: center;
+}

@@ -1,21 +1,47 @@
 import database from "../services/firebase-service.js";
+import loading from "../modules/loading.js";
 
 'use strict';
 
-const getResume = () => {
-    Promise.all([
-        database.read('resume'),
-        database.read('files'),
-    ]).then((values) => {
+const getResume = async () => {
+    let resume = await database.read('resume');
+    let files = await database.read('files');
+    /* 
+        Promise.all([
+            database.read('resume'),
+            database.read('files'),
+            database.read('badges'),
+        ]).then((values) => { 
         let resume = values[0];
         let files = values[1];
+        let badges = values[2];
+    */
+    setEducation(resume.education);
+    setEmployments(resume.employments);
+    setPersonalInfo(resume.personal_info);
 
-        setEducation(resume.education);
-        setEmployments(resume.employments);
-        setPersonalInfo(resume.personal_info);
+    setFiles(files);
 
-        setFiles(files);
-        hideLoading();
+    loading.hide();
+    //});
+}
+
+const getBadges = async () => {
+    let badges = await database.read('badges');
+    let aux = document.querySelector(".info__badges");
+
+    Object.entries(badges).forEach(([key, value]) => {
+        aux.insertAdjacentHTML("beforeEnd", `
+            <div class="col-4">
+                <a href="${value.link}" target="_blank"
+                    <figure>
+                        <img src="${value.img}" alt="${value.alt_img}"  class='img-fluid'>
+                        <figcaption>${value.caption} emitted by: ${value.enterprise} </figcaption>
+                    </figure>
+                </a>
+            </div>
+        `);
+
     });
 }
 
@@ -23,11 +49,12 @@ const setDescription = async () => {
     let aux = document.querySelector('#description');
     let response = await database.read('informations/description');
 
-    if (response) {
-        aux.innerText = response;
-    } else {
-        aux.innerText = 'error on description request';
-    }
+    aux.innerText = response ? response : 'error on description request';
+    /*  if (response) {
+         aux.innerText = response;
+     } else {
+         aux.innerText = 'error on description request';
+     } */
 }
 
 const setEducation = (data) => {
@@ -89,7 +116,7 @@ const setPersonalInfo = (data) => {
 
 }
 
-const setSkills = async() => {
+const setSkills = async () => {
     var title = `<div class="col-md-12"><h3 class="progress-list__title">general skills</h3></div>`;
     let response = await database.read('resume/skills');
     if (response) {
@@ -129,5 +156,6 @@ const setFiles = (data) => {
 window.addEventListener("load", () => {
     setDescription();
     setSkills();
+    getBadges();
     getResume();
 });
