@@ -36,7 +36,7 @@ const getBadges = async () => {
                 <a href="${value.link}" target="_blank"
                     <figure>
                         <img src="${value.img}" alt="${value.alt_img}"  class='img-fluid'>
-                        <figcaption>${value.caption} emitted by: ${value.enterprise} </figcaption>
+                        <figcaption>${value.caption} <br> ${value.enterprise} </figcaption>
                     </figure>
                 </a>
             </div>
