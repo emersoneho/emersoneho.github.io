@@ -11,9 +11,9 @@ const getResume = async () => {
     
     debugger; */
 
- /*    const resume = await firebaseFactory.read('resume');
-    const files = await firebaseFactory.read('files'); */
-    
+     const resume = await firebaseFactory.read('resume');
+    const files = await firebaseFactory.read('files');
+        
 
 
 /*     setEducation(resume.education);

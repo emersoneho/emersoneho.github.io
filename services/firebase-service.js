@@ -1,10 +1,10 @@
-'use strict';
 /*
     Name: FirebaseService
     Author: Émerson Henrique de Oliveira
     GitHub: https://github.com/emersoneho
     Version: 0.0.2
 */
+'use strict';
 
 import database from '../assets/js/firebase-config.js';
 
@@ -12,7 +12,6 @@ const firebaseFactory = {
     create: async (endpoint, ...data) => {
         let newKey = await database.ref().child(endpoint).push().key;
         const response = await database.ref(`${endpoint}/${newKey}`).set(data);
-        debugger;
         return response;
     },
     read: async (endpoint) => {
